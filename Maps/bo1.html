@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <title>Vetos do Apoka</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h3>Vetos do</h3>
+        <img src="../img/apoka_logo.png" alt="">
+    </header>
+    <main>
+        <div class="settings">
+            <div>
+                <img class="teamA" src="../img/apoka_logo.png" alt="">
+                <select id="teamA" class="team"></select>
+            </div>
+            <div>
+                <select id="teamB" class="team"></select>
+                <img class="teamB" src="../img/apoka_logo.png" alt="">
+            </div>
+        </div>
+        <div class="map-choose">
+            <!-- <img id="map-team" class="teamA" alt=""> -->
+            <span id="description"></span>
+        </div>
+        <div class="container">
+            <div class="map" id="Ancient"><figure><img src="./img/maps/ancient.jpeg" alt=""></figure>
+                <div class="top-left"></div>
+                <div class="bottom-left">Ancient</div>
+                <div class="centered"></div>    
+            </div>
+            <div class="map" id="Anubis"><figure><img src="./img/maps/de_anubis.png" alt=""></figure>
+                <div class="top-left"></div>
+                <div class="bottom-left">Anubis</div>
+                <div class="centered"></div>
+            </div>
+            <!-- <div class="map" id="Dust2"><figure><img src="./img/maps/dust2.jpg" alt=""></figure>
+                <div class="top-left"></div>
+                <div class="bottom-left">Dust II</div>
+                <div class="centered"></div>
+            </div> -->
+            <div class="map" id="Inferno"><figure><img src="./img/maps/inferno.jpg" alt=""></figure>
+                <div class="top-left"></div>
+                <div class="bottom-left">Inferno</div>
+                <div class="centered"></div>
+            </div>
+            <div class="map" id="Mirage"><figure><img src="./img/maps/mirage.jpg" alt=""></figure>
+                <div class="top-left"></div>
+                <div class="bottom-left">Mirage</div>
+                <div class="centered"></div>
+            </div>
+            <div class="map" id="Nuke"><figure><img src="./img/maps/nuke.jpg" alt=""></figure>
+                <div class="top-left"></div>
+                <div class="bottom-left">Nuke</div>
+                <div class="centered"></div>
+            </div>
+            <div class="map" id="Overpass"><figure><img src="./img/maps/overpass.jpg" alt=""></figure>
+                <div class="top-left"></div>
+                <div class="bottom-left">Overpass</div>
+                <div class="centered"></div>
+            </div>
+            <div class="map" id="Vertigo"><figure><img src="./img/maps/vertigo.jpg" alt=""></figure>
+                <div class="top-left"></div>
+                <div class="bottom-left">Vertigo</div>
+                <div class="centered"></div>
+            </div>
+        </div>
+        <br>
+        <button onclick="clearMaps()">Limpar</button>
+    </main>
+    <footer>
+        <textarea id="obs" cols="30" rows="10" placeholder="Anotações"></textarea>
+    </footer>
+    <div id="map-log">
+        <span>Mapas: Melhor de <span id="best-of">1</span> </span>
+    </div>
+    <script src="teams.js"></script>
+    <script src="md1.js"></script>
+</body>
+</html>
