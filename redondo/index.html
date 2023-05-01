@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <title>Redondo do Apoka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="../bg.css">
+    <link rel="stylesheet" href="../mobile.css">
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+    
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+    
+        function drop(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            document.getElementById(data).draggable = false;
+            ev.target.ondrop = false;
+            
+            var myFunc = (function() {
+                var handler = function (){
+                    const box = document.getElementById(ev.target.id);
+                    const item = box.querySelector("#"+data);
+                    const prev = document.getElementById("drag_"+data.substring(4));
+                    item.remove();
+                    prev.appendChild(item);
+                    box.parentNode.innerHTML += box.innerHTML;
+                    item.draggable = true;
+                    ev.target.removeEventListener("dblclick", handler);
+                };
+                return handler;
+            })();
+            ev.target.addEventListener("dblclick", myFunc);
+        }
+
+        
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul class="dropdown">
+            <li class="dropbtn"><div onclick="sendData()">Enviar</div></li>
+        </ul>
+    </nav>
+    <header>
+        <h3>Redondo do</h3>
+        <img src="../img/apoka_logo.png" alt="">
+    </header>
+    <main>
+        <div id="apoka" class="container">
+            <div id="result" class="round"></div>
+            <div class="round"></div>
+            <div class="redondo">
+                <div class="redondo-box">
+                    <span>3-0</span>
+                    <div id="slot_0" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="redondo-box">
+                    <span>0-3</span>
+                    <div id="slot_8" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+            </div>
+            
+            <div class="round"><span>As <strong>7 equipes</strong> que avançarão </span></div>
+            
+            <div class="redondo">
+                <div class="redondo-box"><div id="slot_1" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></div>
+                <div class="redondo-box"><div id="slot_2" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></div>
+                <div class="redondo-box"><div id="slot_3" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></div>
+                <div class="redondo-box"><div id="slot_4" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></div>
+                <div class="redondo-box"><div id="slot_5" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></div>
+                <div class="redondo-box"><div id="slot_6" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></div>
+                <div class="redondo-box"><div id="slot_7" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></div>            
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+    </footer>
+    
+    <script src="../bg.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

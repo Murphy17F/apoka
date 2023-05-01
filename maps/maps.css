@@ -1,0 +1,290 @@
+:root {
+    --teamA: url('./img/furi.png') center;
+    --teamB: url('./img/impe.png') center;
+    --decider: url('../img/apoka_logo.png') center;
+    --selectColor: #064cb4;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    height: 20vh;
+    width: calc(100vw - 200px);
+    background: rgba(0,0,0, .4);
+}
+
+#obs{
+    background: transparent;
+    color: #fff;
+    resize: none;
+    border: 0 none;
+    width: 100%;
+    height: 100%;
+    font-size: 14pt;
+    outline: none;
+    position: absolute;
+    padding: 5px;
+    overflow: auto;
+}
+
+#obs::placeholder{
+    color: #ffffff98
+}
+
+header > img{
+    height: 50%;
+}
+
+.settings{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    background: rgba(0,0,0, .4);
+    color: #fff;
+}
+
+.settings div{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.settings div img{
+    height: 40px;
+    width: auto;
+}
+
+.settings div select{
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    /* -webkit-appearance: none; */
+}
+
+.map-choose{
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: large;
+}
+
+.map-choose img{
+    height: 30px;
+    width: 30px;
+}
+
+#description{
+    background: #11111148;
+    width: 100vw;
+    text-align: center;
+    min-height: 60px;
+}
+
+#description b{
+    color: #fff;
+    text-shadow: 2px 1px #111;
+}
+
+.team optgroup{
+    color: #000;
+    background-color: rgba(255, 104, 1, .8);
+}
+
+.team option{
+    color: #fff;
+    background-color: rgba(11,11,11, .8);
+    height: 14pt;
+    font-size: 12pt;
+    padding:5px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 40vh;
+}
+
+.map{
+    width: 15vw;
+    height: 15vh;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    -webkit-box-shadow: 0 10px 6px -6px #000;
+    -moz-box-shadow: 0 10px 6px -6px #000;
+    box-shadow: 0 10px 6px -6px #000;
+    outline: 3px solid #fff;
+}
+
+.pick,.ban,.decider{
+    border: none;
+}
+
+.map:not(.pick,.ban,.decider):hover{
+    /* transition: all .2s ease-in-out; */
+    outline: 3px solid var(--selectColor);
+}
+
+.map > figure{
+    width: 100%;
+    height: 100%; 
+}
+
+.map > figure > img{
+    width: 100%;
+    height: 100%;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -webkit-filter: grayscale(0) blur(0);
+    filter: grayscale(0) blur(0);   
+}
+
+/* .map > figure > img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+} */
+
+/* .map > figure:hover > img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+} */
+
+.map:not(.pick,.ban,.decider) > figure:hover img{
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+    -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.pick .bottom-left{
+    background: rgba(0, 0, 129, 0.7);
+    outline: 1px solid #999;
+}
+.decider .bottom-left{
+    background: rgba(0, 0, 129, 0.7);
+    outline: 1px solid #999;
+}
+
+.ban .bottom-left{
+    background: rgba(155, 0, 0, 0.7);
+    outline: 1px solid #ccc;
+}
+
+.top-left {
+    position: absolute;
+    top: 0px;
+    color: #fff;
+    padding-top: 2px;
+    padding-left: 2px;
+    font-size: small;
+    text-shadow: 1px 1px #111;
+}
+
+.bottom-left {
+    background: rgba(0,0,0, .4);
+    width: 100%;
+    position: absolute;
+    bottom: 4px;
+    color: #fff;
+    padding: 1px;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.centered {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-filter: drop-shadow(5px 5px 5px #000);
+    filter: drop-shadow(5px 5px 5px #000);
+}
+
+.pick > figure{
+    -webkit-filter: blur(2px);
+	filter: blur(2px);
+}
+
+.decider > figure{
+    -webkit-filter: blur(2px);
+	filter: blur(2px);
+}
+
+.ban > figure{
+    -webkit-filter: grayscale(85%) blur(3px);
+	filter: grayscale(85%) blur(3px);
+}
+
+.teamA > .centered{
+    background: var(--teamA);
+    background-size: contain;
+    background-position: center; 
+    background-repeat: no-repeat;
+    width: 50%;
+    background-size: contain;
+}
+
+.teamB > .centered{
+    background: var(--teamB);
+    background-size: contain;
+    background-position: center; 
+    background-repeat: no-repeat;
+    width: 50%;
+    background-size: contain;
+}
+
+.decider > .centered{
+    background: var(--teamA), var(--teamB);
+    background-position: left bottom, right top;
+    background-repeat: no-repeat, no-repeat;
+    width: 50%;
+    background-size: contain;
+}
+
+img.teamA{
+    content: var(--teamA);
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+img.teamB{
+    content: var(--teamB);
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+#map-log{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 20vh;
+    width: 200px;
+    background: rgba(0,0,0, .8);
+    display: flex;
+    flex-direction: column;
+}
+
+#map-log span{
+    color: #ccc;
+    font-size: small;
+    padding: 5px 0px 0px 5px;
+}
