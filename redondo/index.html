@@ -18,46 +18,12 @@
     <link rel="stylesheet" href="../bg.css">
     <link rel="stylesheet" href="../mobile.css">
     <link rel="stylesheet" href="redondo.css">
-    <script>
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
-    
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-    
-        function drop(ev) {
-            ev.preventDefault();
-            const data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-            document.getElementById(data).draggable = false;
-            ev.target.ondrop = false;
-            
-            var myFunc = (function() {
-                var handler = function (){
-                    const box = document.getElementById(ev.target.id);
-                    const item = box.querySelector("#"+data);
-                    const prev = document.getElementById("drag_"+data.substring(4));
-                    item.remove();
-                    prev.appendChild(item);
-                    box.parentNode.innerHTML += box.innerHTML;
-                    item.draggable = true;
-                    ev.target.removeEventListener("dblclick", handler);
-                };
-                return handler;
-            })();
-            ev.target.addEventListener("dblclick", myFunc);
-        }
-
-        
-    </script>
 </head>
 
 <body>
     <nav>
         <ul class="dropdown">
-            <li class="dropbtn"><div onclick="sendData()">Enviar</div></li>
+            <li class="dropbtn"><div id="send" onclick="sendData()">Enviar</div></li>
         </ul>
     </nav>
     <header>
@@ -98,6 +64,8 @@
     
     <script src="../bg.js"></script>
     <script src="app.js"></script>
+    <!-- <script src="drop.js"></script> -->
+    <script src="dropSave.js"></script>
 </body>
 
 </html>

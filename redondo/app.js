@@ -30,31 +30,7 @@ teams.forEach(team => {
     </div>`
 }); 
 
-/* <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSdKJLGupi4lseiC3JtII8A296fwIG9zMG6JFBY-KGaaL3hdfw/formResponse" method="POST">
-    3-0<input type="text" name="entry.161202834"><br>
-    0-3<input type="text" name="entry.572228560"><br>
-    1<input type="text" name="entry.698483627"><br>
-    2<input type="text" name="entry.698483627"><br>
-    3<input type="text" name="entry.698483627"><br>
-    4<input type="text" name="entry.698483627"><br>
-    5<input type="text" name="entry.698483627"><br>
-    6<input type="text" name="entry.698483627"><br>
-    7<input type="text" name="entry.698483627"><br>
-    
-    <button type="submit">Enviar</button>
-</form> */
-
 function sendData(){
-    /* const slot_0 = document.getElementById("slot_0").querySelector("img").getAttribute("alt");
-    const slot_8 = document.getElementById("slot_8").querySelector("img").getAttribute("alt"); 
-    const slot_1 = document.getElementById("slot_1").querySelector("img").getAttribute("alt");
-    const slot_2 = document.getElementById("slot_2").querySelector("img").getAttribute("alt");
-    const slot_3 = document.getElementById("slot_3").querySelector("img").getAttribute("alt");
-    const slot_4 = document.getElementById("slot_4").querySelector("img").getAttribute("alt");
-    const slot_5 = document.getElementById("slot_5").querySelector("img").getAttribute("alt");
-    const slot_6 = document.getElementById("slot_6").querySelector("img").getAttribute("alt");
-    const slot_7 = document.getElementById("slot_7").querySelector("img").getAttribute("alt"); */
-
 /*     const formData = new FormData();
     formData.append("entry.161202834", slot_0);
     formData.append("entry.572228560", slot_8);
@@ -66,12 +42,23 @@ function sendData(){
     formData.append("entry.698483627", slot_6);
     formData.append("entry.698483627", slot_7);
     formData.append("submit", "Submit"); */
-
     var formId = '1FAIpQLSdKJLGupi4lseiC3JtII8A296fwIG9zMG6JFBY-KGaaL3hdfw'
     var queryString = '/formResponse'
     var url = 'https://docs.google.com/forms/u/2/d/e/' + formId + queryString
 
-    var form = document.createElement("form");
+    const formData = new FormData();
+
+    formData.append("entry.161202834", document.getElementById("slot_0").querySelector("img").getAttribute("alt"));
+    for (let i = 1; i <= 7; i++) {
+        formData.append("entry.698483627", document.getElementById("slot_"+i).querySelector("img").getAttribute("alt"));
+    }
+    formData.append("entry.572228560", document.getElementById("slot_8").querySelector("img").getAttribute("alt"));
+
+    const request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.send(formData);
+
+    /* var form = document.createElement("form");
     var in0 = document.createElement("input"); 
     var in8 = document.createElement("input"); 
 
@@ -95,5 +82,5 @@ function sendData(){
 
     document.body.appendChild(form);
 
-    form.submit();
+    form.submit(); */
 }
