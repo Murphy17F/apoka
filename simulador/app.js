@@ -20,10 +20,10 @@
 */
 //#endregion
 
-const round_max = 4;
-const vagas = 5;
+const round_max = 5;
+const vagas = 8;
 const vit = 3;
-const der = 2;
+const der = 3;
 var round = 0;
 
 var roundResult = []
