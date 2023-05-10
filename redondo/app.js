@@ -31,10 +31,13 @@ teams.forEach(team => {
 }); 
 
 function sendData(){
+    const send = localStorage.getItem("sendData");
+    const sendBtn = document.getElementById("send");
+    if(send == 1){sendBtn.style.visibility = checkSend() ? 'visible' : 'hidden'; return;}
     var formId = '1FAIpQLSdKJLGupi4lseiC3JtII8A296fwIG9zMG6JFBY-KGaaL3hdfw'
     var queryString = '/formResponse'
     var url = 'https://docs.google.com/forms/d/e/' + formId + queryString
-    
+
     var form = document.createElement("form");
     form.method = "POST";
     form.action = url;   
@@ -47,6 +50,7 @@ function sendData(){
 
     document.body.appendChild(form);
     form.submit();
+    localStorage.setItem("sendData", 1);
 }
 
 function newInput(name, slot){
