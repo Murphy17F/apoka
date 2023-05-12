@@ -29,14 +29,14 @@ teams = [
     {"seed": 6,"name": "Into The Breach", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/itb.png"},
     {"seed": 7,"name": "Vitality", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/vita.png"},
     {"seed": 8,"name": "Bad News Eagles", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/bne.png"},
-    {"seed": 9,"name": "paiN", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/pain.png"},
-    {"seed": 10,"name": "Monte", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/mont.png"},
-    {"seed": 11,"name": "Gamer Legion", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/gl.png"},
-    {"seed": 12,"name": "G2", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/g2.png"},
-    {"seed": 13,"name": "ENCE", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/ence.png"},
-    {"seed": 14,"name": "forZe", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/forz.png"},
-    {"seed": 15,"name": "NiP", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/nip.png"},
-    {"seed": 16,"name": "Apeks", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/apek.png"},
+    {"seed": 9,"name": "ENCE", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/ence.png"},
+    {"seed": 10,"name": "G2", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/g2.png"},
+    {"seed": 11,"name": "Apeks", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/apek.png"},
+    {"seed": 12,"name": "FaZe Clan", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/faze.png"},
+    {"seed": 13,"name": "NiP", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/nip.png"},
+    {"seed": 14,"name": "Monte", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/mont.png"},
+    {"seed": 15,"name": "Liquid", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/liqu.png"},
+    {"seed": 16,"name": "Gamer Legion", "rnd": "0-0", "score": 0, "v":0, "d":0, "match":[], "status": 0, "img":"https://majors.im/images/paris2023_rmr/gl.png"},
 ] 
 
 localStorage.setItem("teams", JSON.stringify(teams));
